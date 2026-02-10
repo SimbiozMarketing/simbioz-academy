@@ -1,0 +1,8 @@
+https://simbioz.academy/web/image/1120-95b610a6/KMMP_logo.png | assets/img/KMMP_logo.png
+https://simbioz.academy/web/image/1511-513acf55/org.png | assets/img/org.png
+https://simbioz.academy/web/image/1125-47403d37/odoo.jpg | assets/img/odoo.jpg
+https://simbioz.academy/web/image/1119-67e3c1b0/%D0%9C%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BD%D0%B0%D1%8F%20%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C%204%4012x.png | assets/img/_D0_9C_D0_BE_D0_BD_D1_82_D0_B0_D0_B6_D0_BD_D0_B0_D1_8F_20_D0_BE_D0_B1_D0_BB_D0_B0_D1_81_D1_82_D1_8C_204_4012x.png
+https://simbioz.academy/web/image/1388-482b301f/logo.webp | assets/img/logo.webp
+https://simbioz.academy/web/image/1523-0d9e1931/logo_S_Academy.png | assets/img/logo_S_Academy.png
+https://simbioz.academy/web/image/website/2/logo/Academy?unique=73962ea | assets/img/image_6.jpg
+https://simbioz.academy/web/image/1510-ebfef45a/SIMBIOZ_ACADEMY.png | assets/img/SIMBIOZ_ACADEMY.png

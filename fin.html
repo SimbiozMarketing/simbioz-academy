@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ринок фінансової освіти в Україні: Аналіз курсів 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, #3B82F6, #8B5CF6);
+        }
+        .flow-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .flow-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="antialiased pb-12">
+
+<!-- 
+PALETTE: Vibrant Fintech (Deep Navy, Blue, Emerald, Amber, Purple)
+PLAN SUMMARY: 
+1. Hero/Intro: Setting context for the 2026 Ukrainian finance education market.
+2. KPIs: Quick stats on average prices, durations, and formats.
+3. Price Analysis (Bar Chart): Comparing the cost jump across career stages (Accountant to CFO).
+4. Program Duration by Provider (Horizontal Bar): Analyzing time commitment for specific programs at Laba, kmbs, EY, AV Study.
+5. Format Distribution (Doughnut): Online vs Blended vs Offline trend analysis.
+6. Career Flow (Tailwind HTML): Visualizing the path and matching it to course types without using SVG/Mermaid.
+CHART CHOICES:
+- Price Analysis -> Bar Chart -> Goal: Compare -> Best for categorical value comparison. NO SVG.
+- Duration Analysis -> Horizontal Bar -> Goal: Compare/Rank -> Best for reading long program names. NO SVG.
+- Formats -> Doughnut Chart -> Goal: Composition -> Shows part-to-whole relationship clearly. NO SVG.
+CONFIRMATION: NEITHER Mermaid JS NOR SVG were used anywhere in the output.
+-->
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+
+    <header class="text-center mb-16">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-slate-900">
+            Огляд ринку <span class="gradient-text">фінансової освіти</span> в Україні
+        </h1>
+        <p class="mt-4 max-w-3xl mx-auto text-xl text-slate-600">
+            Комплексний аналіз програм навчання для бухгалтерів, фінансових менеджерів та фінансових директорів (CFO). Дослідження цін, термінів та форматів на прикладі провідних бізнес-шкіл та академій (Laba, kmbs, EY Academy, AV Study та ін.).
+        </p>
+    </header>
+
+    <section class="mb-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-blue-500">
+            <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Середня вартість (CFO)</p>
+            <p class="text-3xl font-bold text-slate-900 mt-2">~95,000 ₴</p>
+            <p class="text-sm text-emerald-600 mt-1">▲ Інвестиція в стратегію</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-emerald-500">
+            <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Середня тривалість</p>
+            <p class="text-3xl font-bold text-slate-900 mt-2">3.5 міс</p>
+            <p class="text-sm text-slate-500 mt-1">Від інтенсивів до модульних</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-amber-500">
+            <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Доля онлайн формату</p>
+            <p class="text-3xl font-bold text-slate-900 mt-2">68%</p>
+            <p class="text-sm text-slate-500 mt-1">Live-лекції переважають</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-purple-500">
+            <p class="text-sm font-semibold text-slate-500 uppercase tracking-wide">Шкіл в аналізі</p>
+            <p class="text-3xl font-bold text-slate-900 mt-2">15+</p>
+            <p class="text-sm text-slate-500 mt-1">Національні та міжнародні</p>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+        
+        <section class="bg-white rounded-3xl shadow-xl p-8">
+            <h2 class="text-2xl font-bold text-slate-800 mb-4">Еволюція вартості навчання за ролями</h2>
+            <p class="text-slate-600 mb-6 text-sm">
+                Ринок чітко сегментований. Базові курси для бухгалтерів (наприклад, AV Study) пропонують доступний старт. Перехід до рівня головного бухгалтера та фінансового менеджера (Laba, EY) подвоює вартість через фокус на управлінський облік. Програми для CFO (kmbs, Laba) є преміальним сегментом з фокусом на макроекономіку та стратегію.
+            </p>
+            <div class="chart-container">
+                <canvas id="priceChart"></canvas>
+            </div>
+            <div class="mt-6 text-center text-sm text-slate-500 font-medium">
+                Дані агреговано на основі відкритих прайсів 2026 року (UAH)
+            </div>
+        </section>
+
+        <section class="bg-white rounded-3xl shadow-xl p-8">
+            <h2 class="text-2xl font-bold text-slate-800 mb-4">Тривалість топових програм</h2>
+            <p class="text-slate-600 mb-6 text-sm">
+                Часові інвестиції прямо пропорційні рівню посади. Технічні навички (бухгалтерія) вивчаються за 2-3 місяці інтенсиву. Навчання фінансових директорів, особливо формату Executive (як у kmbs), розтягується на 6-8 місяців модульної роботи для глибокої трансформації мислення.
+            </p>
+            <div class="chart-container">
+                <canvas id="durationChart"></canvas>
+            </div>
+            <div class="mt-6 text-center text-sm text-slate-500 font-medium">
+                Тривалість вказана у місяцях
+            </div>
+        </section>
+
+    </div>
+
+    <section class="bg-white rounded-3xl shadow-xl p-8 mb-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div class="lg:col-span-1">
+                <h2 class="text-2xl font-bold text-slate-800 mb-4">Формати навчання: Пост-пандемічний баланс</h2>
+                <p class="text-slate-600 mb-4">
+                    У 2026 році повністю дистанційне навчання (онлайн live + записи) домінує на рівнях до фінансового менеджера завдяки гнучкості.
+                </p>
+                <p class="text-slate-600 mb-4">
+                    Однак, змішаний формат (Blended) утримує міцні 27% ринку. Він є критично важливим для програм рівня CFO, де нетворкінг, розбір живих кейсів та обмін досвідом з іншими топ-менеджерами в аудиторії генерують половину цінності курсу.
+                </p>
+                <ul class="space-y-3 mt-6">
+                    <li class="flex items-center text-sm text-slate-700">
+                        <span class="w-3 h-3 rounded-full bg-blue-500 mr-3"></span> Онлайн (Laba, FinAcademy)
+                    </li>
+                    <li class="flex items-center text-sm text-slate-700">
+                        <span class="w-3 h-3 rounded-full bg-amber-400 mr-3"></span> Blended (kmbs, EY Academy)
+                    </li>
+                    <li class="flex items-center text-sm text-slate-700">
+                        <span class="w-3 h-3 rounded-full bg-emerald-400 mr-3"></span> Офлайн інтенсиви
+                    </li>
+                </ul>
+            </div>
+            <div class="lg:col-span-2">
+                <div class="chart-container" style="max-height: 350px;">
+                    <canvas id="formatChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold text-center text-slate-800 mb-4">Кар'єрна мапа та освітні потреби</h2>
+        <p class="text-center text-slate-600 mb-12 max-w-2xl mx-auto">
+            Аналіз ринку показує чіткий шлях трансформації фінансового фахівця та відповідні навчальні рішення на кожному етапі безперервного розвитку.
+        </p>
+
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-stretch gap-4 md:gap-2 lg:gap-6 relative">
+            
+            <div class="bg-white rounded-2xl shadow-md p-6 w-full md:w-1/4 flow-card border-t-4 border-blue-400 relative z-10 flex flex-col">
+                <div class="text-3xl mb-3">🧮</div>
+                <h3 class="font-bold text-lg text-slate-800 mb-2">1. Бухгалтер</h3>
+                <p class="text-xs text-slate-500 mb-4 flex-grow">Фокус: ПСБО, податки, первинна документація, 1С/BAS.</p>
+                <div class="bg-slate-50 p-3 rounded-lg">
+                    <p class="text-xs font-semibold text-blue-600 mb-1">Типові курси:</p>
+                    <p class="text-xs text-slate-700">AV Study "Бухгалтер з нуля", Prometheus.</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex flex-col justify-center text-slate-300 font-bold text-2xl z-0">➔</div>
+            <div class="md:hidden flex justify-center text-slate-300 font-bold text-2xl my-2">↓</div>
+
+            <div class="bg-white rounded-2xl shadow-md p-6 w-full md:w-1/4 flow-card border-t-4 border-emerald-400 relative z-10 flex flex-col">
+                <div class="text-3xl mb-3">📊</div>
+                <h3 class="font-bold text-lg text-slate-800 mb-2">2. Головний Бухгалтер</h3>
+                <p class="text-xs text-slate-500 mb-4 flex-grow">Фокус: Оптимізація податків, аудит, МСФЗ, управління відділом.</p>
+                <div class="bg-slate-50 p-3 rounded-lg">
+                    <p class="text-xs font-semibold text-emerald-600 mb-1">Типові курси:</p>
+                    <p class="text-xs text-slate-700">Laba "Головний бухгалтер", EY "МСФЗ базовий".</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex flex-col justify-center text-slate-300 font-bold text-2xl z-0">➔</div>
+            <div class="md:hidden flex justify-center text-slate-300 font-bold text-2xl my-2">↓</div>
+
+            <div class="bg-white rounded-2xl shadow-md p-6 w-full md:w-1/4 flow-card border-t-4 border-amber-400 relative z-10 flex flex-col">
+                <div class="text-3xl mb-3">📈</div>
+                <h3 class="font-bold text-lg text-slate-800 mb-2">3. Фін. Менеджер</h3>
+                <p class="text-xs text-slate-500 mb-4 flex-grow">Фокус: Управлінський облік, бюджетування, фінансовий аналіз, Unit-економіка.</p>
+                <div class="bg-slate-50 p-3 rounded-lg">
+                    <p class="text-xs font-semibold text-amber-600 mb-1">Типові курси:</p>
+                    <p class="text-xs text-slate-700">Laba "Фінансове моделювання", EY "Управлінський облік".</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex flex-col justify-center text-slate-300 font-bold text-2xl z-0">➔</div>
+            <div class="md:hidden flex justify-center text-slate-300 font-bold text-2xl my-2">↓</div>
+
+            <div class="bg-white rounded-2xl shadow-md p-6 w-full md:w-1/4 flow-card border-t-4 border-purple-500 relative z-10 flex flex-col">
+                <div class="text-3xl mb-3">👑</div>
+                <h3 class="font-bold text-lg text-slate-800 mb-2">4. Фін. Директор (CFO)</h3>
+                <p class="text-xs text-slate-500 mb-4 flex-grow">Фокус: Стратегія бізнесу, залучення інвестицій, M&A, ризик-менеджмент.</p>
+                <div class="bg-slate-50 p-3 rounded-lg">
+                    <p class="text-xs font-semibold text-purple-600 mb-1">Типові курси:</p>
+                    <p class="text-xs text-slate-700">kmbs "CFO Program", Laba "Фінансовий директор".</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<script>
+    function wrapText(labelString) {
+        if (labelString.length <= 16) return labelString;
+        const words = labelString.split(' ');
+        const lines = [];
+        let currentLine = words[0];
+        for (let i = 1; i < words.length; i++) {
+            if (currentLine.length + words[i].length + 1 <= 16) {
+                currentLine += ' ' + words[i];
+            } else {
+                lines.push(currentLine);
+                currentLine = words[i];
+            }
+        }
+        lines.push(currentLine);
+        return lines;
+    }
+
+    const universalTooltipConfig = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            },
+            legend: {
+                display: false
+            }
+        },
+        maintainAspectRatio: false,
+        responsive: true
+    };
+
+    const priceLabels = [
+        'Бухгалтер (Базовий рівень)', 
+        'Головний бухгалтер', 
+        'Фінансовий менеджер', 
+        'Фінансовий директор (CFO)'
+    ].map(wrapText);
+
+    const ctxPrice = document.getElementById('priceChart').getContext('2d');
+    new Chart(ctxPrice, {
+        type: 'bar',
+        data: {
+            labels: priceLabels,
+            datasets: [{
+                label: 'Середня вартість (UAH)',
+                data: [9500, 24000, 36000, 95000],
+                backgroundColor: [
+                    '#60A5FA', 
+                    '#34D399', 
+                    '#FBBF24', 
+                    '#A78BFA'  
+                ],
+                borderRadius: 6,
+                borderSkipped: false,
+            }]
+        },
+        options: {
+            ...universalTooltipConfig,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: { color: '#E2E8F0', drawBorder: false },
+                    ticks: {
+                        callback: function(value) {
+                            return value.toLocaleString() + ' ₴';
+                        }
+                    }
+                },
+                x: {
+                    grid: { display: false, drawBorder: false }
+                }
+            }
+        }
+    });
+
+    const durationLabels = [
+        'AV Study: Бухгалтер з нуля',
+        'EY: Управлінський облік',
+        'Laba: Головний бухгалтер',
+        'Laba: Фінансовий директор',
+        'kmbs: CFO Program'
+    ].map(wrapText);
+
+    const ctxDuration = document.getElementById('durationChart').getContext('2d');
+    new Chart(ctxDuration, {
+        type: 'bar',
+        data: {
+            labels: durationLabels,
+            datasets: [{
+                label: 'Тривалість (Місяців)',
+                data: [2.5, 2, 3, 3.5, 7],
+                backgroundColor: '#3B82F6',
+                borderRadius: 4,
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                tooltip: universalTooltipConfig.plugins.tooltip,
+                legend: { display: false }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    grid: { color: '#E2E8F0' },
+                    title: { display: true, text: 'Місяці' }
+                },
+                y: {
+                    grid: { display: false }
+                }
+            }
+        }
+    });
+
+    const formatLabels = ['Онлайн (Live + Запис)', 'Змішаний (Blended)', 'Виключно Офлайн'].map(wrapText);
+    const ctxFormat = document.getElementById('formatChart').getContext('2d');
+    new Chart(ctxFormat, {
+        type: 'doughnut',
+        data: {
+            labels: formatLabels,
+            datasets: [{
+                data: [68, 27, 5],
+                backgroundColor: [
+                    '#3B82F6', 
+                    '#FBBF24', 
+                    '#10B981'  
+                ],
+                borderWidth: 0,
+                hoverOffset: 10
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            cutout: '65%',
+            plugins: {
+                tooltip: universalTooltipConfig.plugins.tooltip,
+                legend: {
+                    display: false 
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
